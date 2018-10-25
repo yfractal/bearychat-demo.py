@@ -31,13 +31,14 @@ def main():
         if not message or not message.is_chat_message():
             continue
         try:
-            print("rtm loop received {0} from {1}".format(message["text"],
-                                                          message["uid"]))
+            if message["file"] and message["file"]["category"] == "image":
+                print("The image's url is: {0}".format(message["file"]["image_url"]))
         except Exception:
             continue
 
         if message.is_from(user):
             continue
+
         loop.send(message.refer("Pardon?"))
 
 
