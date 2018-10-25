@@ -6,7 +6,7 @@ from rtm_loop import RTMLoop
 
 def main():
     # init the rtm client
-    client = RTMClient("your-rtm-token", "https://rtm.bearychat.com")
+    client = RTMClient("rtm-token", "https://rtm.bearychat.com")
 
     resp = client.start()  # get rtm user and ws_host
 
